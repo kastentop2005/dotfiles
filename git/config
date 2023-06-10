@@ -1,0 +1,14 @@
+[user]
+  name = "Real name here"
+  email = "email@here"
+  username = "Username here"
+[core]
+  editor = nvim
+[web]
+  browser = firefox
+[github]
+  user = user here
+[credential]
+  helper = store
+[commit]
+  gpgsign = true

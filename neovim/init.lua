@@ -1,0 +1,2 @@
+-- load profile
+require("konnlori")
