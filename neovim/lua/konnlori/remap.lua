@@ -49,3 +49,5 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- :BarbarDisable - very bad command, should never be used
 -----------------------------------------------------------------
 
+-- null-ls
+map('n', '<leader>F', ':lua vim.lsp.buf.format()<CR>', opts)
