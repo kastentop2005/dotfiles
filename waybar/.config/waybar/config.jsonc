@@ -1,0 +1,106 @@
+{
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 30,
+  "spacing" : 0,
+  "modules-left": [
+    "dwl/tags",
+    "dwl/window"
+  ],
+
+  "modules-center": ["clock"],
+
+  "modules-right": [
+    "bluetooth",
+    "network",
+    "pulseaudio", 
+    "backlight",
+    "battery",
+    "tray"
+  ],
+
+  "dwl/tags": {
+    "num-tags": 9,
+    "hide-vacant": true,
+    "expand": false,
+    "disable-click": true,
+    "tag-labels": []
+  },
+
+  "dwl/window": {
+    "format": "{title}",
+    "max-length": 30,
+    "rewrite": {
+      " \\| ": "",
+      "(.*) - Mozilla Firefox": "Firefox"
+    }
+  },
+
+  "clock": {
+    "timezone": "Europe/Moscow",
+    "tooltip": false,
+    "format": "{:%H:%M %A, %B %d}",
+    "interval": 1
+},
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-on": "{icon}",
+    "format-off": "{icon}", 
+    "format-connected":"{icon}",
+    "format-icons":{
+        "on":"󰂯",
+        "off": "󰂲",
+        "connected": "󰂱"
+        },
+    "on-click": "ghostty -e bluetui",
+    "tooltip-format-connected":"{device_enumerate}"
+  },
+
+  "network": {
+    "format-wifi": "󰤢",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰤠 ",
+    "interval": 5,
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "on-click": "ghostty -e impala"
+
+ },
+
+  "backlight": {
+        "format": "{icon}  {percent}%",
+        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
+        "tooltip": false
+  },
+  
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "ghostty -e wiremix"
+  },
+
+  "battery": {
+        "interval":2,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""]
+  },
+
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8
+  }
+}

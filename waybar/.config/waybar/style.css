@@ -1,0 +1,81 @@
+/* --- Global Styles --- */
+@import 'mocha.css';
+
+* {
+  font-family: 'Inter', 'NotoSans Nerd Font', sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+/* --- Waybar Container --- */
+window#waybar {
+  background-color: @crust;
+}
+
+/* --- Left Modules --- */
+#tags button {
+  color: @text;
+  padding: 0 5px;
+}
+
+#tags button.focused {
+  color: @text;
+  background-color: @base;
+  font-weight: bold;
+}
+
+#tags button:hover {
+  background: shade(@base, 0.5);
+}
+
+#window {
+  padding-left: 0.5rem;
+  color: @text;
+}
+
+/* --- Center Module --- */
+#clock {
+  color: @text;
+  font-weight: 500;
+}
+
+/* --- Right Modules --- */
+#bluetooth {
+  color: #FFFFFF;
+}
+
+#network {
+  color: #FFFFFF;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#pulseaudio {
+  color: #FFFFFF;
+  padding: 4px;
+}
+
+#backlight {
+  color: #FFFFFF;
+  padding: 4px;
+}
+
+#battery {
+  color: #FFFFFF;
+  padding: 4px;
+  margin-right: 10px;
+}
+
+#tray {
+  color: #FFFFFF;
+  margin-right: 10px
+}
+
+/* --- Tooltip Styles --- */
+tooltip {
+  background-color: @mantle;
+  color: @text;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
