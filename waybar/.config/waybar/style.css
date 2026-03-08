@@ -1,81 +1,84 @@
 /* --- Global Styles --- */
-@import 'mocha.css';
+@import 'adwaita.css';
 
 * {
   font-family: 'Inter', 'NotoSans Nerd Font', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   min-height: 0;
 }
 
 /* --- Waybar Container --- */
 window#waybar {
-  background-color: @crust;
+  background-color: @headerbar_bg; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  color: @headerbar_fg;
 }
 
 /* --- Left Modules --- */
 #tags button {
-  color: @text;
-  padding: 0 5px;
+  color: @window_fg;
+  padding: 0 4px;
+  transition: all 0.2s ease;
 }
 
 #tags button.focused {
-  color: @text;
-  background-color: @base;
+  color: @headerbar_fg;
+  background-color: @blue_3;
   font-weight: bold;
 }
 
 #tags button:hover {
-  background: shade(@base, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -3px @blue_1;
+}
+
+#workspaces {
+  color: @window_fg;
+  font-weight: 600; 
+}
+
+#workspaces button.active {
+  background: @blue_3;
 }
 
 #window {
-  padding-left: 0.5rem;
-  color: @text;
+  padding-left: 1rem;
+  font-weight: 600;
+}
+
+#tray {
+  padding-right: 1rem;
 }
 
 /* --- Center Module --- */
 #clock {
-  color: @text;
-  font-weight: 500;
+  color: @headerbar_fg;
+  font-weight: 600;
 }
 
 /* --- Right Modules --- */
-#bluetooth {
-  color: #FFFFFF;
+#tray > * {
+  margin-left: 10px;
 }
 
-#network {
-  color: #FFFFFF;
-  margin-left: 4px;
-  margin-right: 4px;
+.modules-right > widget > * {
+  margin: 0 12px 0 0;
+}
+/* Specific Accent for critical states */
+#battery.critical {
+  color: @red_3;
 }
 
-#pulseaudio {
-  color: #FFFFFF;
-  padding: 4px;
-}
-
-#backlight {
-  color: #FFFFFF;
-  padding: 4px;
-}
-
-#battery {
-  color: #FFFFFF;
-  padding: 4px;
-  margin-right: 10px;
-}
-
-#tray {
-  color: #FFFFFF;
-  margin-right: 10px
+#battery.charging {
+  color: @green_3;
 }
 
 /* --- Tooltip Styles --- */
 tooltip {
-  background-color: @mantle;
-  color: @text;
-  padding: 5px 12px;
-  border-radius: 6px;
+  background-color: @popover_bg;
+  color: @headerbar_fg;
+  padding: 8px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
