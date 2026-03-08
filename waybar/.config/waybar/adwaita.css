@@ -1,0 +1,39 @@
+/* Blues */
+@define-color blue_1 #99c1f1;
+@define-color blue_3 #3584e4;
+@define-color blue_5 #1c71d8;
+
+/* Greens */
+@define-color green_1 #8ff0a4;
+@define-color green_3 #2ec27e;
+@define-color green_5 #26a269;
+
+/* Yellows */
+@define-color yellow_1 #f9f06b;
+@define-color yellow_3 #f8e45c;
+@define-color yellow_5 #f5c211;
+
+/* Oranges */
+@define-color orange_1 #ffbe6f;
+@define-color orange_3 #ff7800;
+@define-color orange_5 #e66100;
+
+/* Reds */
+@define-color red_1 #f66151;
+@define-color red_3 #e01b24;
+@define-color red_5 #a51d2d;
+
+/* Purples */
+@define-color purple_1 #dc8add;
+@define-color purple_3 #c061cb;
+@define-color purple_5 #9141ac;
+
+/* UI Colors (Dark) */
+@define-color window_bg #242424;
+@define-color window_fg #eeeeec;
+@define-color view_bg #1e1e1e;
+@define-color headerbar_bg #303030;
+@define-color headerbar_fg #ffffff;
+@define-color popover_bg #383838;
+@define-color card_bg #303030;
+@define-color dialog_bg #383838;
