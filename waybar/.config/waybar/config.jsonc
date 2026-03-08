@@ -5,37 +5,39 @@
   "passthrough": false,
   "gtk-layer-shell": true,
   "height": 30,
-  "spacing" : 0,
   "modules-left": [
-    "dwl/tags",
+    "ext/workspaces",
     "dwl/window"
   ],
 
   "modules-center": ["clock"],
 
   "modules-right": [
-    "bluetooth",
+    "tray",
     "network",
-    "pulseaudio", 
-    "backlight",
+    "bluetooth",
+    "wireplumber",
     "battery",
-    "tray"
   ],
-
-  "dwl/tags": {
-    "num-tags": 9,
-    "hide-vacant": true,
-    "expand": false,
-    "disable-click": true,
-    "tag-labels": []
+  
+  "ext/workspaces": {
+   "format": "{icon}",
+    "ignore-hidden": true,
+    "on-click": "activate",
+    "on-click-right": "deactivate",
+    "sort-by-id": true
   },
 
   "dwl/window": {
     "format": "{title}",
     "max-length": 30,
     "rewrite": {
-      " \\| ": "",
-      "(.*) - Mozilla Firefox": "Firefox"
+      " (.*) \\| ": "$1",
+      ".* — Mozilla Firefox": "Firefox",
+      "• Discord .*": "Discord",
+      "Ghostty (.*)": "Ghostty",
+      "/home/konnlori": "Ghostty",
+      "FAgram .*": "Telegram"
     }
   },
 
@@ -52,36 +54,31 @@
     "format-off": "{icon}", 
     "format-connected":"{icon}",
     "format-icons":{
-        "on":"󰂯",
+        "on": "󰂯",
         "off": "󰂲",
         "connected": "󰂱"
-        },
+        },    
     "on-click": "ghostty -e bluetui",
     "tooltip-format-connected":"{device_enumerate}"
   },
 
   "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
+    "format-wifi": "",
+    "format-ethernet": "󰲝",
+    "format-disconnected": "󰌙",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "ghostty -e impala"
 
  },
-
-  "backlight": {
-        "format": "{icon}  {percent}%",
-        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
-        "tooltip": false
-  },
-  
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
+   
+  "wireplumber": {
+    "format": "{icon}",
     "format-muted": "",
     "format-icons": {
       "default": ["", "", " "]
     },
+    "tooltip-format": "{volume}%",
     "on-click": "ghostty -e wiremix"
   },
 
@@ -91,16 +88,15 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
+        "format": "{icon}",
+        "format-full": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
         "format-icons": ["", "", "", "", ""]
   },
 
   "tray": {
-    "icon-size": 14,
-    "spacing": 8
+    "icon-size": 16,
+    "spacing": 6
   }
 }
